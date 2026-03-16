@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaMed AI — Startup Profile · Resonance</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- ====== SIDEBAR ====== -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo" style="font-size:1.2rem;">Resonance<span>.</span></a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="investor-feed.html" class="sidebar-nav-item" data-page="investor-feed.html">
+        <span class="icon">📥</span> Deal Feed
+      </a>
+      <a href="#" class="sidebar-nav-item">
+        <span class="icon">📊</span> Pipeline
+      </a>
+      <a href="#" class="sidebar-nav-item">
+        <span class="icon">💼</span> Portfolio
+      </a>
+      <a href="#" class="sidebar-nav-item">
+        <span class="icon">📈</span> Analytics
+      </a>
+      <div style="height:1px;background:#E2E8F0;margin:12px 0;"></div>
+      <a href="investor-feed.html" class="sidebar-nav-item">
+        <span class="icon">←</span> Back to Feed
+      </a>
+      <a href="index.html" class="sidebar-nav-item">
+        <span class="icon">🏠</span> Home
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="avatar" style="background:#0F172A;">DP</div>
+        <div>
+          <div style="font-size:0.8rem;font-weight:600;">David Park</div>
+          <div style="font-size:0.72rem;color:#64748B;">Horizon Ventures</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ====== MAIN CONTENT ====== -->
+  <main class="main-content">
+
+    <!-- Profile Header -->
+    <div class="page-header" style="flex-direction:column;align-items:flex-start;gap:16px;padding:24px 32px;">
+      <a href="investor-feed.html" style="font-size:0.8rem;color:#64748B;display:flex;align-items:center;gap:4px;">← Back to Deal Feed</a>
+      <div class="flex justify-between items-start w-full" style="flex-wrap:wrap;gap:16px;">
+        <div class="flex gap-4 items-center">
+          <div class="avatar avatar-xl" style="background:#6366F1;border-radius:20px;font-size:1.6rem;">NM</div>
+          <div>
+            <div class="flex items-center gap-3 flex-wrap">
+              <h2 style="margin:0;">NovaMed AI</h2>
+              <span class="badge badge-verified" style="font-size:0.8rem;">✓ Verified</span>
+              <span class="badge badge-dark" style="font-size:0.8rem;">Seed</span>
+              <span class="badge badge-accent" style="font-size:0.8rem;">HealthTech / AI</span>
+            </div>
+            <p class="text-muted" style="margin-top:4px;font-size:0.9rem;">San Francisco, CA &nbsp;·&nbsp; Founded 2023 &nbsp;·&nbsp; 8 employees</p>
+            <p style="font-size:0.85rem;color:#475569;margin-top:2px;">Raising <strong>$2.5M Seed</strong> &nbsp;·&nbsp; led by Maya Chen &amp; Kevin Zhao</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3" style="flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <div class="match-score match-score-high" style="font-size:1rem;padding:8px 16px;">🎯 94% match</div>
+            <div class="text-xs text-muted" style="margin-top:4px;">Thesis alignment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start;">
+
+        <!-- Main Profile Content -->
+        <div>
+          <!-- Tabs -->
+          <div class="tabs tabs-container" id="profile-tabs">
+            <button class="tab active" data-tab="overview">Overview</button>
+            <button class="tab" data-tab="metrics">Metrics</button>
+            <button class="tab" data-tab="team">Team</button>
+            <button class="tab" data-tab="dataroom">Data Room</button>
+          </div>
+
+          <!-- Overview Tab -->
+          <div class="tab-content active" id="overview">
+            <div class="card mb-4">
+              <h3 style="margin-bottom:12px;">📌 Pitch Summary</h3>
+              <p style="line-height:1.8;color:#334155;">
+                NovaMed AI is building the operating system for AI-augmented diagnostics in primary care. Our platform integrates directly with EHR systems to surface AI-generated diagnostic suggestions — reducing missed diagnoses by 40% and cutting time-to-diagnosis by 60%.
+              </p>
+              <p style="line-height:1.8;color:#334155;margin-top:12px;">
+                We're already deployed in 12 health systems across California with $280K ARR, growing at 22% month-over-month. Our seed round will fund expansion to 50 health systems and build out our FDA 510(k) clearance pathway.
+              </p>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+              <div class="card">
+                <h4 style="margin-bottom:12px;">🔍 Problem</h4>
+                <p class="text-sm" style="line-height:1.7;color:#475569;">
+                  15 million misdiagnoses occur annually in US primary care. Overburdened physicians spend &lt;15 minutes per patient, missing critical diagnostic signals. The cost: $50B+ in avoidable downstream care.
+                </p>
+              </div>
+              <div class="card">
+                <h4 style="margin-bottom:12px;">💡 Solution</h4>
+                <p class="text-sm" style="line-height:1.7;color:#475569;">
+                  NovaMed's AI listens to patient-physician conversations in real time, cross-references against 10M+ medical records, and surfaces differential diagnoses ranked by probability and urgency — in under 3 seconds.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <h4 style="margin-bottom:12px;">📏 Market Size</h4>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+                <div style="text-align:center;padding:16px;background:#F8FAFC;border-radius:10px;border:1px solid #E2E8F0;">
+                  <div style="font-size:1.6rem;font-weight:800;color:#0F172A;">$380B</div>
+                  <div class="text-xs text-muted mt-1">Total Addressable Market<br/>Global Clinical Decision Support</div>
+                </div>
+                <div style="text-align:center;padding:16px;background:#EEF2FF;border-radius:10px;border:1px solid rgba(99,102,241,0.2);">
+                  <div style="font-size:1.6rem;font-weight:800;color:#6366F1;">$42B</div>
+                  <div class="text-xs text-muted mt-1">Serviceable Addressable<br/>US Primary Care AI</div>
+                </div>
+                <div style="text-align:center;padding:16px;background:#ECFDF5;border-radius:10px;border:1px solid rgba(16,185,129,0.2);">
+                  <div style="font-size:1.6rem;font-weight:800;color:#10B981;">$4.2B</div>
+                  <div class="text-xs text-muted mt-1">Serviceable Obtainable<br/>5-year target</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metrics Tab -->
+          <div class="tab-content" id="metrics">
+            <div class="card mb-4">
+              <div class="flex justify-between items-center mb-4">
+                <h3>📈 Verified Financial Metrics</h3>
+                <span class="badge badge-verified">✓ Verified via QuickBooks</span>
+              </div>
+              <div class="metrics-row">
+                <div class="metric-item">
+                  <div class="metric-value">$280K</div>
+                  <div class="metric-label">Annual Recurring Revenue</div>
+                  <div class="metric-badge"><span class="badge badge-verified" style="font-size:0.65rem;">✓ QuickBooks</span></div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value" style="color:#10B981;">+22%</div>
+                  <div class="metric-label">Month-over-Month Growth</div>
+                  <div class="metric-badge"><span class="badge badge-verified" style="font-size:0.65rem;">✓ Verified</span></div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value">$23K</div>
+                  <div class="metric-label">Monthly Burn Rate</div>
+                  <div class="metric-badge"><span class="badge badge-verified" style="font-size:0.65rem;">✓ Brex</span></div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value">16 mo</div>
+                  <div class="metric-label">Runway</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+              <div class="card">
+                <h4 style="margin-bottom:14px;">👥 Customer Metrics</h4>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">Active Health Systems</span>
+                    <span class="text-sm font-semibold">12</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">Monthly Active Physicians</span>
+                    <span class="text-sm font-semibold">340</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">Avg Contract Value</span>
+                    <span class="text-sm font-semibold">$23K/yr</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">Logo Churn (LTM)</span>
+                    <span class="text-sm font-semibold text-verified">0%</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">NPS Score</span>
+                    <span class="text-sm font-semibold text-verified">72</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <h4 style="margin-bottom:14px;">🏥 Product Metrics</h4>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">Diagnostic Accuracy</span>
+                    <span class="text-sm font-semibold">94.3%</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">Avg Time to Diagnosis</span>
+                    <span class="text-sm font-semibold">2.8 sec</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">Missed Diagnosis Reduction</span>
+                    <span class="text-sm font-semibold text-verified">-40%</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">EHR Integrations</span>
+                    <span class="text-sm font-semibold">Epic, Cerner, Athena</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-muted">Uptime (30d)</span>
+                    <span class="text-sm font-semibold text-verified">99.97%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h4 style="margin-bottom:14px;">📊 ARR Growth</h4>
+              <!-- Simple bar chart simulation -->
+              <div style="display:flex;align-items:flex-end;gap:8px;height:100px;padding:0 8px;">
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                  <div style="flex:1;width:100%;background:#E2E8F0;border-radius:4px 4px 0 0;position:relative;min-height:20px;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:#6366F1;border-radius:4px 4px 0 0;height:15%;"></div>
+                  </div>
+                  <div class="text-xs text-muted">Aug</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                  <div style="flex:1;width:100%;background:#E2E8F0;border-radius:4px 4px 0 0;position:relative;min-height:20px;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:#6366F1;border-radius:4px 4px 0 0;height:25%;"></div>
+                  </div>
+                  <div class="text-xs text-muted">Sep</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                  <div style="flex:1;width:100%;background:#E2E8F0;border-radius:4px 4px 0 0;position:relative;min-height:20px;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:#6366F1;border-radius:4px 4px 0 0;height:38%;"></div>
+                  </div>
+                  <div class="text-xs text-muted">Oct</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                  <div style="flex:1;width:100%;background:#E2E8F0;border-radius:4px 4px 0 0;position:relative;min-height:20px;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:#6366F1;border-radius:4px 4px 0 0;height:50%;"></div>
+                  </div>
+                  <div class="text-xs text-muted">Nov</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                  <div style="flex:1;width:100%;background:#E2E8F0;border-radius:4px 4px 0 0;position:relative;min-height:20px;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:#6366F1;border-radius:4px 4px 0 0;height:62%;"></div>
+                  </div>
+                  <div class="text-xs text-muted">Dec</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                  <div style="flex:1;width:100%;background:#E2E8F0;border-radius:4px 4px 0 0;position:relative;min-height:20px;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:#6366F1;border-radius:4px 4px 0 0;height:72%;"></div>
+                  </div>
+                  <div class="text-xs text-muted">Jan</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                  <div style="flex:1;width:100%;background:#E2E8F0;border-radius:4px 4px 0 0;position:relative;min-height:20px;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:#6366F1;border-radius:4px 4px 0 0;height:83%;"></div>
+                  </div>
+                  <div class="text-xs text-muted">Feb</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                  <div style="flex:1;width:100%;background:#E2E8F0;border-radius:4px 4px 0 0;position:relative;min-height:20px;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;background:#6366F1;border-radius:4px 4px 0 0;height:100%;"></div>
+                  </div>
+                  <div class="text-xs text-muted">Mar</div>
+                </div>
+              </div>
+              <div class="text-xs text-muted text-center" style="margin-top:8px;">ARR Growth Aug 2025 → Mar 2026 ($280K)</div>
+            </div>
+          </div>
+
+          <!-- Team Tab -->
+          <div class="tab-content" id="team">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="card">
+                <div class="flex gap-3 items-center mb-3">
+                  <div class="avatar avatar-lg" style="background:#6366F1;">MC</div>
+                  <div>
+                    <h4>Maya Chen</h4>
+                    <div class="text-sm text-muted">Co-Founder & CEO</div>
+                  </div>
+                </div>
+                <p class="text-sm" style="line-height:1.7;color:#475569;margin-bottom:12px;">
+                  Previously Product Lead at Google Health (2018–2023). BS Computer Science, Stanford. Built diagnostic ML models used by 2M+ patients.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="badge badge-gray">Google Health</span>
+                  <span class="badge badge-gray">Genentech</span>
+                  <span class="badge badge-gray">Stanford CS</span>
+                </div>
+                <div class="mt-3">
+                  <a href="#" class="text-sm text-accent" style="display:flex;align-items:center;gap:4px;">🔗 LinkedIn →</a>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="flex gap-3 items-center mb-3">
+                  <div class="avatar avatar-lg" style="background:#0F172A;">KZ</div>
+                  <div>
+                    <h4>Kevin Zhao</h4>
+                    <div class="text-sm text-muted">Co-Founder & CTO</div>
+                  </div>
+                </div>
+                <p class="text-sm" style="line-height:1.7;color:#475569;margin-bottom:12px;">
+                  PhD Biomedical Informatics, UCSF. Former Principal Engineer at Epic Systems. Led EHR integration for 3 major US health networks.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="badge badge-gray">Epic Systems</span>
+                  <span class="badge badge-gray">UCSF PhD</span>
+                  <span class="badge badge-gray">NIH Fellow</span>
+                </div>
+                <div class="mt-3">
+                  <a href="#" class="text-sm text-accent" style="display:flex;align-items:center;gap:4px;">🔗 LinkedIn →</a>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="flex gap-3 items-center mb-3">
+                  <div class="avatar avatar-lg" style="background:#059669;">AL</div>
+                  <div>
+                    <h4>Aisha Lindqvist</h4>
+                    <div class="text-sm text-muted">VP of Clinical Affairs</div>
+                  </div>
+                </div>
+                <p class="text-sm" style="line-height:1.7;color:#475569;margin-bottom:12px;">
+                  MD, Harvard Medical School. 10 years in clinical informatics at Mass General. Oversees FDA clearance strategy and clinical advisory board.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="badge badge-gray">Harvard MD</span>
+                  <span class="badge badge-gray">Mass General</span>
+                </div>
+                <div class="mt-3">
+                  <a href="#" class="text-sm text-accent" style="display:flex;align-items:center;gap:4px;">🔗 LinkedIn →</a>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="flex gap-3 items-center mb-3">
+                  <div class="avatar avatar-lg" style="background:#7C3AED;">RN</div>
+                  <div>
+                    <h4>Raj Nair</h4>
+                    <div class="text-sm text-muted">Head of Growth</div>
+                  </div>
+                </div>
+                <p class="text-sm" style="line-height:1.7;color:#475569;margin-bottom:12px;">
+                  Former Head of GTM at Doximity, led growth from $50M to $200M ARR. Responsible for all health system partnerships and enterprise sales.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="badge badge-gray">Doximity</span>
+                  <span class="badge badge-gray">Salesforce Health</span>
+                </div>
+                <div class="mt-3">
+                  <a href="#" class="text-sm text-accent" style="display:flex;align-items:center;gap:4px;">🔗 LinkedIn →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <h4 style="margin-bottom:12px;">🎓 Advisors</h4>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div class="flex items-center gap-3 p-4" style="background:#F8FAFC;border-radius:8px;border:1px solid #E2E8F0;">
+                  <div class="avatar" style="background:#6366F1;font-size:0.75rem;">DF</div>
+                  <div>
+                    <div class="text-sm font-semibold">Dr. Daniel Fong</div>
+                    <div class="text-xs text-muted">Former CMO, UCSF Health · FDA Advisory Panel Member</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 p-4" style="background:#F8FAFC;border-radius:8px;border:1px solid #E2E8F0;">
+                  <div class="avatar" style="background:#0F172A;font-size:0.75rem;">PW</div>
+                  <div>
+                    <div class="text-sm font-semibold">Patricia Wong</div>
+                    <div class="text-xs text-muted">General Partner, GV · Former VP Engineering, Google</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Room Tab -->
+          <div class="tab-content" id="dataroom">
+            <div class="card" style="border:2px dashed #CBD5E1;text-align:center;padding:40px 24px;margin-bottom:16px;">
+              <div style="font-size:2.5rem;margin-bottom:12px;">🔒</div>
+              <h3 style="margin-bottom:8px;">Data Room Access Required</h3>
+              <p class="text-muted text-sm" style="max-width:360px;margin:0 auto 20px;">
+                To view NovaMed AI's full data room — including financials, IP documents, and due diligence materials — you'll need to connect.
+              </p>
+              <button class="btn btn-primary">Request Data Room Access</button>
+            </div>
+
+            <div class="card">
+              <h4 style="margin-bottom:14px;">📄 Available Documents (Preview)</h4>
+              <div style="display:flex;flex-direction:column;gap:0;">
+                <div class="checklist-item">
+                  <div class="check-icon done">✓</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-semibold">Pitch Deck (Mar 2026)</div>
+                    <div class="text-xs text-muted">15 slides · PDF · Updated Mar 10</div>
+                  </div>
+                  <span class="badge badge-verified" style="font-size:0.7rem;">Public</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon pending">🔒</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-semibold" style="color:#94A3B8;">Financial Model (3-Year Projection)</div>
+                    <div class="text-xs text-muted">Excel · Locked</div>
+                  </div>
+                  <span class="badge badge-gray" style="font-size:0.7rem;">Locked</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon pending">🔒</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-semibold" style="color:#94A3B8;">Cap Table & Ownership Summary</div>
+                    <div class="text-xs text-muted">PDF · Locked</div>
+                  </div>
+                  <span class="badge badge-gray" style="font-size:0.7rem;">Locked</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon done">✓</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-semibold">Revenue Dashboard</div>
+                    <div class="text-xs text-muted">Live data · Verified via QuickBooks</div>
+                  </div>
+                  <span class="badge badge-verified" style="font-size:0.7rem;">✓ Live</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon pending">🔒</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-semibold" style="color:#94A3B8;">Customer References (3)</div>
+                    <div class="text-xs text-muted">Locked</div>
+                  </div>
+                  <span class="badge badge-gray" style="font-size:0.7rem;">Locked</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon pending">🔒</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-semibold" style="color:#94A3B8;">IP & Patent Filings</div>
+                    <div class="text-xs text-muted">2 provisional patents · Locked</div>
+                  </div>
+                  <span class="badge badge-gray" style="font-size:0.7rem;">Locked</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /tabs -->
+
+        <!-- Action Sidebar -->
+        <div style="position:sticky;top:24px;">
+          <!-- Action Bar -->
+          <div class="card mb-4" style="border:2px solid #6366F1;">
+            <h4 style="margin-bottom:16px;color:#6366F1;">Take Action</h4>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <button class="btn btn-primary w-full" style="justify-content:center;">
+                📩 Request Introduction
+              </button>
+              <button class="btn btn-outline w-full feed-action-pipeline" style="justify-content:center;">
+                ⭐ Add to Pipeline
+              </button>
+              <button class="btn btn-danger w-full feed-action-pass" style="justify-content:center;">
+                ✗ Pass
+              </button>
+            </div>
+            <div class="divider"></div>
+            <div class="text-xs text-muted text-center" style="line-height:1.6;">
+              Requesting an introduction notifies Maya Chen and our team to facilitate a warm intro.
+            </div>
+          </div>
+
+          <!-- Match Breakdown -->
+          <div class="card mb-4">
+            <h4 style="margin-bottom:14px;">🎯 Match Breakdown</h4>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-xs text-muted">Thesis Alignment</span>
+                  <span class="text-xs font-semibold text-accent">96%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width:96%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-xs text-muted">Stage Fit</span>
+                  <span class="text-xs font-semibold text-accent">100%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width:100%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-xs text-muted">Traction Score</span>
+                  <span class="text-xs font-semibold" style="color:#F59E0B;">88%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill amber" style="width:88%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-xs text-muted">Team Strength</span>
+                  <span class="text-xs font-semibold text-accent">92%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width:92%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Facts -->
+          <div class="card">
+            <h4 style="margin-bottom:12px;">📋 Key Facts</h4>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div class="flex justify-between">
+                <span class="text-xs text-muted">Raising</span>
+                <span class="text-xs font-semibold">$2.5M Seed</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-xs text-muted">Valuation (pre)</span>
+                <span class="text-xs font-semibold">$12M</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-xs text-muted">Lead investor</span>
+                <span class="text-xs font-semibold text-amber">Seeking lead</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-xs text-muted">Committed</span>
+                <span class="text-xs font-semibold text-verified">$750K</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-xs text-muted">Close date</span>
+                <span class="text-xs font-semibold">Apr 30, 2026</span>
+              </div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="flex justify-between">
+                <span class="text-xs text-muted">Profile views</span>
+                <span class="text-xs font-semibold">47</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-xs text-muted">Intro requests</span>
+                <span class="text-xs font-semibold">8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /page-body -->
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  // Initialize tabs for this page
+  document.addEventListener('DOMContentLoaded', () => {
+    const profileTabs = document.querySelectorAll('#profile-tabs .tab');
+    profileTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        profileTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        const target = document.getElementById(tab.dataset.tab);
+        if (target) target.classList.add('active');
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Founder Dashboard — Resonance</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- ====== SIDEBAR ====== -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo" style="font-size:1.2rem;">Resonance<span>.</span></a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="founder-dashboard.html" class="sidebar-nav-item active" data-page="founder-dashboard.html">
+        <span class="icon">📊</span> Dashboard
+      </a>
+      <a href="#matches" class="sidebar-nav-item" data-page="">
+        <span class="icon">🎯</span> My Matches
+        <span class="badge badge-accent" style="margin-left:auto;padding:2px 8px;">6</span>
+      </a>
+      <a href="#dataroom" class="sidebar-nav-item" data-page="">
+        <span class="icon">📁</span> Data Room
+      </a>
+      <a href="#outreach" class="sidebar-nav-item" data-page="">
+        <span class="icon">📤</span> Outreach
+      </a>
+      <div style="height:1px;background:#E2E8F0;margin:12px 0;"></div>
+      <a href="investor-feed.html" class="sidebar-nav-item" data-page="investor-feed.html">
+        <span class="icon">👁️</span> Browse Investors
+      </a>
+      <a href="#" class="sidebar-nav-item">
+        <span class="icon">⚙️</span> Settings
+      </a>
+      <a href="index.html" class="sidebar-nav-item">
+        <span class="icon">←</span> Back to Home
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="avatar" style="background:#6366F1;">MC</div>
+        <div>
+          <div style="font-size:0.8rem;font-weight:600;">Maya Chen</div>
+          <div style="font-size:0.72rem;color:#64748B;">NovaMed AI</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ====== MAIN CONTENT ====== -->
+  <main class="main-content">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div>
+        <h2 style="margin-bottom:2px;">Welcome back, Maya 👋</h2>
+        <p class="text-muted text-sm">NovaMed AI · Seed Stage · San Francisco, CA</p>
+      </div>
+      <div class="flex gap-3 items-center">
+        <div style="text-align:right; margin-right:8px;">
+          <div style="font-size:0.72rem;color:#64748B;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px;">AI Audit Score</div>
+          <div class="flex items-center gap-2">
+            <div style="
+              width:52px;height:52px;border-radius:50%;
+              background: conic-gradient(#6366F1 314deg, #E2E8F0 0deg);
+              display:flex;align-items:center;justify-content:center;
+              position:relative;
+            ">
+              <div style="width:40px;height:40px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;position:absolute;">
+                <span style="font-size:0.85rem;font-weight:800;color:#0F172A;">87</span>
+              </div>
+            </div>
+            <span class="badge badge-accent">Strong</span>
+          </div>
+        </div>
+        <a href="index.html#waitlist" class="btn btn-primary btn-sm">Upgrade to Pro</a>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- ====== STATS ROW ====== -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="flex items-center gap-2 mb-2">
+            <span style="font-size:1.1rem;">🎯</span>
+            <span class="text-xs text-muted font-semibold" style="text-transform:uppercase;letter-spacing:0.06em;">Match Score</span>
+          </div>
+          <div class="stat-value" style="color:#6366F1;">87</div>
+          <div class="stat-label">AI Profile Score</div>
+          <div class="stat-change">↑ +4 from last week</div>
+        </div>
+        <div class="stat-card">
+          <div class="flex items-center gap-2 mb-2">
+            <span style="font-size:1.1rem;">🤝</span>
+            <span class="text-xs text-muted font-semibold" style="text-transform:uppercase;letter-spacing:0.06em;">Investors</span>
+          </div>
+          <div class="stat-value">6</div>
+          <div class="stat-label">AI-Matched This Month</div>
+          <div class="stat-change">↑ 2 new this week</div>
+        </div>
+        <div class="stat-card">
+          <div class="flex items-center gap-2 mb-2">
+            <span style="font-size:1.1rem;">📅</span>
+            <span class="text-xs text-muted font-semibold" style="text-transform:uppercase;letter-spacing:0.06em;">Meetings</span>
+          </div>
+          <div class="stat-value">3</div>
+          <div class="stat-label">Meetings Booked</div>
+          <div class="stat-change">1 this week</div>
+        </div>
+        <div class="stat-card">
+          <div class="flex items-center gap-2 mb-2">
+            <span style="font-size:1.1rem;">👁️</span>
+            <span class="text-xs text-muted font-semibold" style="text-transform:uppercase;letter-spacing:0.06em;">Data Room</span>
+          </div>
+          <div class="stat-value">18</div>
+          <div class="stat-label">Data Room Views</div>
+          <div class="stat-change">↑ +5 this week</div>
+        </div>
+      </div>
+
+      <!-- ====== TWO COLUMN LAYOUT ====== -->
+      <div style="display:grid;grid-template-columns:1fr 340px;gap:24px;margin-bottom:28px;">
+
+        <!-- Matched Investors List -->
+        <div id="matches">
+          <div class="flex justify-between items-center mb-4">
+            <h3>🎯 Matched Investors</h3>
+            <span class="badge badge-accent">6 matches</span>
+          </div>
+
+          <!-- Investor Match Cards -->
+          <div style="display:flex;flex-direction:column;gap:12px;">
+
+            <!-- Card 1 — Sarah Kim -->
+            <div class="card" style="border-left:4px solid #10B981;padding:18px 20px;">
+              <div class="flex justify-between items-start">
+                <div class="flex gap-3 items-center">
+                  <div class="avatar" style="background:#4F46E5;">SK</div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4>Sarah Kim</h4>
+                      <span class="badge badge-verified" style="padding:2px 8px;font-size:0.7rem;">✓ Verified</span>
+                    </div>
+                    <div class="text-sm text-muted">Principal · Sequoia Capital</div>
+                    <div class="text-xs text-muted" style="margin-top:2px;">Seed / Series A · AI, HealthTech, Enterprise SaaS</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="match-score match-score-high">🎯 94%</div>
+                  <div class="text-xs text-muted" style="margin-top:4px;">Thesis match</div>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-primary btn-sm">Send Pitch →</button>
+                <a href="investor-profile.html" class="btn btn-ghost btn-sm">View Profile</a>
+                <button class="btn btn-ghost btn-sm">Request Intro</button>
+              </div>
+            </div>
+
+            <!-- Card 2 — David Park -->
+            <div class="card" style="border-left:4px solid #10B981;padding:18px 20px;">
+              <div class="flex justify-between items-start">
+                <div class="flex gap-3 items-center">
+                  <div class="avatar" style="background:#0F172A;">DP</div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4>David Park</h4>
+                      <span class="badge badge-verified" style="padding:2px 8px;font-size:0.7rem;">✓ Verified</span>
+                      <span class="badge badge-amber" style="padding:2px 8px;font-size:0.7rem;">Active</span>
+                    </div>
+                    <div class="text-sm text-muted">Partner · Horizon Ventures</div>
+                    <div class="text-xs text-muted" style="margin-top:2px;">Pre-Seed / Seed · HealthTech, AI, Climate</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="match-score match-score-high">🎯 94%</div>
+                  <div class="text-xs text-muted" style="margin-top:4px;">Thesis match</div>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-primary btn-sm">Send Pitch →</button>
+                <a href="investor-profile.html" class="btn btn-ghost btn-sm">View Profile</a>
+                <button class="btn btn-ghost btn-sm">Request Intro</button>
+              </div>
+            </div>
+
+            <!-- Card 3 — Elena Torres -->
+            <div class="card" style="border-left:4px solid #6366F1;padding:18px 20px;">
+              <div class="flex justify-between items-start">
+                <div class="flex gap-3 items-center">
+                  <div class="avatar" style="background:#8B5CF6;">ET</div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4>Elena Torres</h4>
+                      <span class="badge badge-verified" style="padding:2px 8px;font-size:0.7rem;">✓ Verified</span>
+                    </div>
+                    <div class="text-sm text-muted">Partner · Bessemer Venture Partners</div>
+                    <div class="text-xs text-muted" style="margin-top:2px;">Seed / Series A · HealthTech, Biotech, Consumer Health</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="match-score match-score-high">🎯 85%</div>
+                  <div class="text-xs text-muted" style="margin-top:4px;">Thesis match</div>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-primary btn-sm">Send Pitch →</button>
+                <a href="investor-profile.html" class="btn btn-ghost btn-sm">View Profile</a>
+                <button class="btn btn-ghost btn-sm">Request Intro</button>
+              </div>
+            </div>
+
+            <!-- Card 4 — James Liu -->
+            <div class="card" style="border-left:4px solid #6366F1;padding:18px 20px;">
+              <div class="flex justify-between items-start">
+                <div class="flex gap-3 items-center">
+                  <div class="avatar" style="background:#1D4ED8;">JL</div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4>James Liu</h4>
+                      <span class="badge badge-verified" style="padding:2px 8px;font-size:0.7rem;">✓ Verified</span>
+                    </div>
+                    <div class="text-sm text-muted">Partner · Andreessen Horowitz</div>
+                    <div class="text-xs text-muted" style="margin-top:2px;">Seed · AI/ML Infrastructure, Dev Tools</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="match-score match-score-high">📊 88%</div>
+                  <div class="text-xs text-muted" style="margin-top:4px;">Thesis match</div>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-primary btn-sm">Send Pitch →</button>
+                <a href="investor-profile.html" class="btn btn-ghost btn-sm">View Profile</a>
+                <button class="btn btn-ghost btn-sm">Request Intro</button>
+              </div>
+            </div>
+
+            <!-- Card 5 — Priya Nair -->
+            <div class="card" style="padding:18px 20px;">
+              <div class="flex justify-between items-start">
+                <div class="flex gap-3 items-center">
+                  <div class="avatar" style="background:#059669;">PN</div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4>Priya Nair</h4>
+                      <span class="badge badge-verified" style="padding:2px 8px;font-size:0.7rem;">✓ Verified</span>
+                    </div>
+                    <div class="text-sm text-muted">General Partner · GV (Google Ventures)</div>
+                    <div class="text-xs text-muted" style="margin-top:2px;">Series A / B · Digital Health, Diagnostics, Bio</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="match-score match-score-mid">📊 79%</div>
+                  <div class="text-xs text-muted" style="margin-top:4px;">Thesis match</div>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-outline btn-sm">Send Pitch →</button>
+                <a href="investor-profile.html" class="btn btn-ghost btn-sm">View Profile</a>
+              </div>
+            </div>
+
+            <!-- Card 6 — Marcus Webb -->
+            <div class="card" style="padding:18px 20px;">
+              <div class="flex justify-between items-start">
+                <div class="flex gap-3 items-center">
+                  <div class="avatar" style="background:#78716C;">MW</div>
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h4>Marcus Webb</h4>
+                      <span class="badge badge-gray" style="padding:2px 8px;font-size:0.7rem;">Unverified</span>
+                    </div>
+                    <div class="text-sm text-muted">Venture Partner · First Round Capital</div>
+                    <div class="text-xs text-muted" style="margin-top:2px;">Pre-Seed / Seed · Marketplace, SaaS, AI Tools</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="match-score match-score-mid">📌 72%</div>
+                  <div class="text-xs text-muted" style="margin-top:4px;">Thesis match</div>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-outline btn-sm">Send Pitch →</button>
+                <a href="investor-profile.html" class="btn btn-ghost btn-sm">View Profile</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Data Room Status -->
+        <div>
+          <div id="dataroom">
+            <div class="flex justify-between items-center mb-4">
+              <h3>📁 Data Room</h3>
+              <span class="badge badge-verified">62% complete</span>
+            </div>
+            <div class="card" style="padding:20px;">
+              <div style="margin-bottom:16px;">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-sm font-semibold">Profile Completeness</span>
+                  <span class="text-sm text-accent font-semibold">62%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width:62%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="checklist-item">
+                  <div class="check-icon done">✓</div>
+                  <div>
+                    <div class="text-sm font-semibold">Pitch Deck (Latest)</div>
+                    <div class="text-xs text-muted">Uploaded Mar 10</div>
+                  </div>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon done">✓</div>
+                  <div>
+                    <div class="text-sm font-semibold">Financial Model (3-yr)</div>
+                    <div class="text-xs text-muted">Uploaded Mar 8</div>
+                  </div>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon done">✓</div>
+                  <div>
+                    <div class="text-sm font-semibold">Cap Table</div>
+                    <div class="text-xs text-muted">Uploaded Feb 28</div>
+                  </div>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon done">✓</div>
+                  <div>
+                    <div class="text-sm font-semibold">Revenue Dashboard</div>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="badge badge-verified" style="padding:1px 6px;font-size:0.65rem;">✓ QuickBooks</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon done">✓</div>
+                  <div>
+                    <div class="text-sm font-semibold">Team Bios & LinkedIn</div>
+                    <div class="text-xs text-muted">Uploaded Feb 20</div>
+                  </div>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon pending">?</div>
+                  <div>
+                    <div class="text-sm font-semibold" style="color:#94A3B8;">IP / Patents Overview</div>
+                    <div class="text-xs text-muted">Not uploaded</div>
+                  </div>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon pending">?</div>
+                  <div>
+                    <div class="text-sm font-semibold" style="color:#94A3B8;">Product Demo Video</div>
+                    <div class="text-xs text-muted">Not uploaded</div>
+                  </div>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-icon pending">?</div>
+                  <div>
+                    <div class="text-sm font-semibold" style="color:#94A3B8;">Customer References (3)</div>
+                    <div class="text-xs text-muted">Not added</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button class="btn btn-outline w-full btn-sm" style="justify-content:center;">+ Upload Documents</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Stats -->
+          <div style="margin-top:20px;">
+            <div class="card" style="padding:16px 20px;">
+              <h4 style="margin-bottom:12px;">📈 This Week</h4>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-muted">Profile views</span>
+                  <span class="text-sm font-semibold">12</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-muted">Data room opens</span>
+                  <span class="text-sm font-semibold">5</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-muted">Pitch opens</span>
+                  <span class="text-sm font-semibold">8</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-muted">New messages</span>
+                  <span class="text-sm font-semibold text-accent">3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== OUTREACH PIPELINE (KANBAN) ====== -->
+      <div id="outreach">
+        <div class="flex justify-between items-center mb-4">
+          <h3>📤 Outreach Pipeline</h3>
+          <a href="investor-feed.html" class="btn btn-ghost btn-sm">Browse More Investors →</a>
+        </div>
+
+        <div class="kanban">
+          <!-- Column: Matched -->
+          <div class="kanban-col">
+            <div class="kanban-col-header">
+              <span class="text-sm font-semibold">Matched</span>
+              <span class="badge badge-gray" style="padding:2px 8px;">2</span>
+            </div>
+            <div class="kanban-col-body">
+              <div class="kanban-card">
+                <div class="text-sm font-semibold mb-1">Priya Nair</div>
+                <div class="text-xs text-muted mb-2">GV (Google Ventures)</div>
+                <div class="match-score match-score-mid" style="font-size:0.7rem;padding:2px 8px;">79% match</div>
+              </div>
+              <div class="kanban-card">
+                <div class="text-sm font-semibold mb-1">Marcus Webb</div>
+                <div class="text-xs text-muted mb-2">First Round Capital</div>
+                <div class="match-score match-score-mid" style="font-size:0.7rem;padding:2px 8px;">72% match</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column: Pitched -->
+          <div class="kanban-col">
+            <div class="kanban-col-header">
+              <span class="text-sm font-semibold">Pitched</span>
+              <span class="badge badge-accent" style="padding:2px 8px;">2</span>
+            </div>
+            <div class="kanban-col-body">
+              <div class="kanban-card">
+                <div class="text-sm font-semibold mb-1">James Liu</div>
+                <div class="text-xs text-muted mb-2">Andreessen Horowitz</div>
+                <div class="match-score match-score-high" style="font-size:0.7rem;padding:2px 8px;">88% match</div>
+                <div class="text-xs text-muted mt-2">Pitch sent Mar 12</div>
+              </div>
+              <div class="kanban-card">
+                <div class="text-sm font-semibold mb-1">Elena Torres</div>
+                <div class="text-xs text-muted mb-2">Bessemer Ventures</div>
+                <div class="match-score match-score-high" style="font-size:0.7rem;padding:2px 8px;">85% match</div>
+                <div class="text-xs text-muted mt-2">Pitch sent Mar 9</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column: In Diligence -->
+          <div class="kanban-col">
+            <div class="kanban-col-header">
+              <span class="text-sm font-semibold">In Diligence</span>
+              <span class="badge badge-amber" style="padding:2px 8px;">1</span>
+            </div>
+            <div class="kanban-col-body">
+              <div class="kanban-card" style="border-left:3px solid #F59E0B;">
+                <div class="text-sm font-semibold mb-1">Sarah Kim</div>
+                <div class="text-xs text-muted mb-2">Sequoia Capital</div>
+                <div class="match-score match-score-high" style="font-size:0.7rem;padding:2px 8px;">94% match</div>
+                <div class="text-xs text-muted mt-2">📋 Data room shared Mar 8</div>
+                <div class="text-xs text-verified mt-1">Next: Follow-up call Mar 18</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column: Term Sheet -->
+          <div class="kanban-col">
+            <div class="kanban-col-header">
+              <span class="text-sm font-semibold">Term Sheet</span>
+              <span class="badge badge-verified" style="padding:2px 8px;">1</span>
+            </div>
+            <div class="kanban-col-body">
+              <div class="kanban-card" style="border-left:3px solid #10B981;">
+                <div class="text-sm font-semibold mb-1">David Park</div>
+                <div class="text-xs text-muted mb-2">Horizon Ventures</div>
+                <div class="match-score match-score-high" style="font-size:0.7rem;padding:2px 8px;">94% match</div>
+                <div style="margin-top:8px;">
+                  <span class="badge badge-verified" style="font-size:0.7rem;">🎉 Term Sheet Received</span>
+                </div>
+                <div class="text-xs text-muted mt-2">$750K · Seed · Mar 14</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /page-body -->
+  </main>
+</div><!-- /app-layout -->
+
+<script src="js/app.js"></script>
+</body>
+</html>
