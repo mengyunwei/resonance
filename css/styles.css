@@ -1044,6 +1044,110 @@ h5 { font-size: 0.875rem; font-weight: 600; }
   .trust-logos { gap: 16px; }
 }
 
+/* =========================================
+   RESONANCE 2.0 — New Components
+   ========================================= */
+
+/* --- Integration Strip (Hero) --- */
+.integration-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.integration-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.integration-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.integration-logo {
+  padding: 5px 14px;
+  background: white;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Verified Badge Display --- */
+.verified-badge-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: var(--color-verified-bg);
+  border: 1.5px solid rgba(16,185,129,0.3);
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Audit Metric Cards --- */
+.audit-breakdown-row {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-border);
+}
+
+.audit-metric-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.audit-metric-icon {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* --- Compliance Badges --- */
+.compliance-strip {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.compliance-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.compliance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: var(--color-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  box-shadow: var(--shadow-sm);
+}
+
 /* --- Utility --- */
 .mt-4 { margin-top: 16px; }
 .mt-6 { margin-top: 24px; }
