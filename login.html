@@ -769,6 +769,19 @@
       return;
     }
 
+    // Ensure profile row exists (fallback if trigger didn't fire)
+    if (data.user) {
+      await _supabase.from('profiles').upsert({
+        id:         data.user.id,
+        role:       currentRole,
+        first_name: firstName,
+        last_name:  lastName,
+        full_name:  `${firstName} ${lastName}`,
+        email,
+        company:    company || null
+      }, { onConflict: 'id', ignoreDuplicates: true });
+    }
+
     // If email confirmation is required, show success message
     if (data.user && !data.session) {
       btn.disabled = false;
