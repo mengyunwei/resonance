@@ -406,6 +406,31 @@
       color: #065F46;
     }
 
+    /* Mode tab switcher */
+    .mode-tabs {
+      display: flex;
+      border-bottom: 2px solid var(--color-border);
+      margin-bottom: 28px;
+      gap: 0;
+    }
+
+    .mode-tab {
+      flex: 1;
+      padding: 10px 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.15s;
+    }
+
+    .mode-tab:hover { color: var(--color-text); }
+    .mode-tab.active { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+
     /* Responsive */
     @media (max-width: 768px) {
       .login-page { grid-template-columns: 1fr; }
@@ -465,14 +490,16 @@
   <div class="login-right">
     <div class="login-box">
 
-      <div class="login-box-header">
-        <!-- Mobile logo -->
-        <a href="index.html" class="logo" style="display:none;margin-bottom:24px;" id="mobile-logo">Resonance<span>.</span></a>
-        <h2>Welcome back</h2>
-        <p>Sign in to your Resonance account</p>
+      <!-- Mobile logo -->
+      <a href="index.html" class="logo" style="display:none;margin-bottom:24px;" id="mobile-logo">Resonance<span>.</span></a>
+
+      <!-- Mode tabs: Sign In / Create Account -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" id="tab-signin" onclick="setMode('signin')">Sign In</button>
+        <button class="mode-tab" id="tab-signup" onclick="setMode('signup')">Create Account</button>
       </div>
 
-      <!-- Role Toggle -->
+      <!-- Role Toggle (shared) -->
       <div class="role-toggle" id="role-toggle">
         <button class="role-btn active" id="btn-founder" onclick="setRole('founder')">
           🚀 Founder
@@ -488,38 +515,24 @@
         <span id="alert-message">Invalid email or password. Please try again.</span>
       </div>
 
-      <!-- Login Form -->
-      <form id="login-form" novalidate>
+      <!-- ======= SIGN IN FORM ======= -->
+      <form id="signin-form" novalidate>
 
         <div class="form-group">
-          <label class="form-label" for="email">Work Email</label>
-          <input
-            type="email"
-            id="email"
-            class="form-input"
-            placeholder="you@company.com"
-            autocomplete="email"
-            required
-          />
-          <div class="form-error" id="email-error">Please enter a valid email address.</div>
+          <label class="form-label" for="signin-email">Work Email</label>
+          <input type="email" id="signin-email" class="form-input"
+            placeholder="you@company.com" autocomplete="email" required />
+          <div class="form-error" id="signin-email-error">Please enter a valid email address.</div>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="password">Password</label>
+          <label class="form-label" for="signin-password">Password</label>
           <div class="password-wrapper">
-            <input
-              type="password"
-              id="password"
-              class="form-input"
-              placeholder="••••••••"
-              autocomplete="current-password"
-              required
-            />
-            <button type="button" class="password-toggle" id="password-toggle" aria-label="Toggle password visibility">
-              👁
-            </button>
+            <input type="password" id="signin-password" class="form-input"
+              placeholder="••••••••" autocomplete="current-password" required />
+            <button type="button" class="password-toggle" id="signin-pwd-toggle" aria-label="Toggle password">👁</button>
           </div>
-          <div class="form-error" id="password-error">Password must be at least 8 characters.</div>
+          <div class="form-error" id="signin-password-error">Password must be at least 8 characters.</div>
         </div>
 
         <div class="form-row">
@@ -527,12 +540,60 @@
             <input type="checkbox" id="remember-me" />
             Remember me for 30 days
           </label>
-          <a href="#" class="forgot-link">Forgot password?</a>
+          <a href="#" class="forgot-link" onclick="showForgotPassword(event)">Forgot password?</a>
         </div>
 
-        <button type="submit" class="btn-login" id="submit-btn">
-          Sign In →
-        </button>
+        <button type="submit" class="btn-login" id="signin-btn">Sign In →</button>
+      </form>
+
+      <!-- ======= SIGN UP FORM ======= -->
+      <form id="signup-form" novalidate style="display:none;">
+
+        <div class="form-group">
+          <label class="form-label" for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" class="form-input"
+            placeholder="Maya Chen" autocomplete="name" required />
+          <div class="form-error" id="signup-name-error">Please enter your full name.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-company">Company / Fund Name</label>
+          <input type="text" id="signup-company" class="form-input"
+            placeholder="NovaMed AI" autocomplete="organization" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-email">Work Email</label>
+          <input type="email" id="signup-email" class="form-input"
+            placeholder="you@company.com" autocomplete="email" required />
+          <div class="form-error" id="signup-email-error">Please enter a valid email address.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="signup-password" class="form-input"
+              placeholder="Min. 8 characters" autocomplete="new-password" required />
+            <button type="button" class="password-toggle" id="signup-pwd-toggle" aria-label="Toggle password">👁</button>
+          </div>
+          <div class="form-error" id="signup-password-error">Password must be at least 8 characters.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-confirm">Confirm Password</label>
+          <input type="password" id="signup-confirm" class="form-input"
+            placeholder="••••••••" autocomplete="new-password" required />
+          <div class="form-error" id="signup-confirm-error">Passwords do not match.</div>
+        </div>
+
+        <div style="font-size:0.78rem;color:var(--color-text-muted);margin-bottom:20px;line-height:1.6;">
+          By creating an account you agree to our
+          <a href="#" style="color:var(--color-accent);font-weight:600;">Terms of Service</a>
+          and
+          <a href="#" style="color:var(--color-accent);font-weight:600;">Privacy Policy</a>.
+        </div>
+
+        <button type="submit" class="btn-login" id="signup-btn">Create Account →</button>
       </form>
 
       <!-- OR Divider -->
@@ -557,123 +618,180 @@
         </button>
       </div>
 
-      <!-- Sign Up Prompt -->
-      <div class="signup-prompt">
-        Don't have an account?
-        <a href="index.html#waitlist">Request early access →</a>
-      </div>
-
     </div>
   </div>
 
 </div>
 
 <script>
-  // ---- Role toggle ----
+  // ---- State ----
   let currentRole = 'founder';
+  let currentMode = 'signin';
 
-  function setRole(role) {
-    currentRole = role;
-    const founderBtn = document.getElementById('btn-founder');
-    const investorBtn = document.getElementById('btn-investor');
-
-    founderBtn.className = 'role-btn' + (role === 'founder' ? ' active' : '');
-    investorBtn.className = 'role-btn' + (role === 'investor' ? ' active-investor' : '');
-
-    // Update submit button color for investor
-    const submitBtn = document.getElementById('submit-btn');
-    submitBtn.style.background = role === 'investor' ? '#0F172A' : '';
+  // ---- Mode toggle (Sign In / Create Account) ----
+  function setMode(mode) {
+    currentMode = mode;
+    document.getElementById('tab-signin').classList.toggle('active', mode === 'signin');
+    document.getElementById('tab-signup').classList.toggle('active', mode === 'signup');
+    document.getElementById('signin-form').style.display = mode === 'signin' ? '' : 'none';
+    document.getElementById('signup-form').style.display = mode === 'signup' ? '' : 'none';
+    clearAlert();
   }
 
-  // ---- Password toggle ----
-  document.getElementById('password-toggle').addEventListener('click', () => {
-    const input = document.getElementById('password');
-    const btn = document.getElementById('password-toggle');
-    if (input.type === 'password') {
-      input.type = 'text';
-      btn.textContent = '🙈';
-    } else {
-      input.type = 'password';
-      btn.textContent = '👁';
-    }
-  });
+  // ---- Role toggle ----
+  function setRole(role) {
+    currentRole = role;
+    document.getElementById('btn-founder').className = 'role-btn' + (role === 'founder' ? ' active' : '');
+    document.getElementById('btn-investor').className = 'role-btn' + (role === 'investor' ? ' active-investor' : '');
+    const investorColor = '#0F172A';
+    document.getElementById('signin-btn').style.background = role === 'investor' ? investorColor : '';
+    document.getElementById('signup-btn').style.background = role === 'investor' ? investorColor : '';
+  }
 
-  // ---- Form validation & submission ----
-  document.getElementById('login-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    clearErrors();
+  // ---- Password toggles ----
+  function initPwdToggle(inputId, btnId) {
+    document.getElementById(btnId).addEventListener('click', () => {
+      const input = document.getElementById(inputId);
+      const btn = document.getElementById(btnId);
+      input.type = input.type === 'password' ? 'text' : 'password';
+      btn.textContent = input.type === 'password' ? '👁' : '🙈';
+    });
+  }
+  initPwdToggle('signin-password', 'signin-pwd-toggle');
+  initPwdToggle('signup-password', 'signup-pwd-toggle');
 
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-    let valid = true;
+  // ---- Helpers ----
+  function showAlert(msg, type = 'error') {
+    const el = document.getElementById('login-alert');
+    document.getElementById('alert-message').textContent = msg;
+    el.className = `alert alert-${type} visible`;
+  }
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showFieldError('email', 'email-error');
-      valid = false;
-    }
+  function clearAlert() {
+    document.getElementById('login-alert').className = 'alert alert-error';
+  }
 
-    if (!password || password.length < 8) {
-      showFieldError('password', 'password-error');
-      valid = false;
-    }
-
-    if (!valid) return;
-
-    // Loading state
-    const btn = document.getElementById('submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'Signing in…';
-
-    // Sign in with Supabase Auth
-    const { data, error } = await _supabase.auth.signInWithPassword({ email, password });
-
-    if (error) {
-      btn.disabled = false;
-      btn.textContent = 'Sign In →';
-      document.getElementById('alert-message').textContent = error.message;
-      document.getElementById('login-alert').classList.add('visible');
-      return;
-    }
-
-    // Fetch the user's role from their profile
-    const { data: profile } = await _supabase
-      .from('profiles')
-      .select('role')
-      .eq('id', data.user.id)
-      .single();
-
-    const role = profile?.role || currentRole;
-    const dest = role === 'investor' ? 'investor-feed.html' : 'founder-dashboard.html';
-    window.location.href = dest;
-  });
-
-  function showFieldError(inputId, errorId) {
+  function fieldError(inputId, errorId) {
     document.getElementById(inputId).classList.add('error');
     document.getElementById(errorId).classList.add('visible');
   }
 
   function clearErrors() {
-    ['email', 'password'].forEach(id => {
-      document.getElementById(id).classList.remove('error');
+    document.querySelectorAll('.form-input').forEach(el => el.classList.remove('error'));
+    document.querySelectorAll('.form-error').forEach(el => el.classList.remove('visible'));
+    clearAlert();
+  }
+
+  function isValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+  function redirectAfterAuth(userId) {
+    // Read role from profile, fall back to selected role
+    _supabase.from('profiles').select('role').eq('id', userId).single()
+      .then(({ data: profile }) => {
+        const role = profile?.role || currentRole;
+        window.location.href = role === 'investor' ? 'investor-feed.html' : 'founder-dashboard.html';
+      });
+  }
+
+  // ---- Sign In ----
+  document.getElementById('signin-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearErrors();
+
+    const email    = document.getElementById('signin-email').value.trim();
+    const password = document.getElementById('signin-password').value;
+    let valid = true;
+
+    if (!isValidEmail(email)) { fieldError('signin-email', 'signin-email-error'); valid = false; }
+    if (password.length < 8)  { fieldError('signin-password', 'signin-password-error'); valid = false; }
+    if (!valid) return;
+
+    const btn = document.getElementById('signin-btn');
+    btn.disabled = true;
+    btn.textContent = 'Signing in…';
+
+    const { data, error } = await _supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      btn.disabled = false;
+      btn.textContent = 'Sign In →';
+      showAlert(error.message);
+      return;
+    }
+
+    redirectAfterAuth(data.user.id);
+  });
+
+  // ---- Sign Up ----
+  document.getElementById('signup-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearErrors();
+
+    const name     = document.getElementById('signup-name').value.trim();
+    const company  = document.getElementById('signup-company').value.trim();
+    const email    = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+    const confirm  = document.getElementById('signup-confirm').value;
+    let valid = true;
+
+    if (!name)               { fieldError('signup-name', 'signup-name-error'); valid = false; }
+    if (!isValidEmail(email)){ fieldError('signup-email', 'signup-email-error'); valid = false; }
+    if (password.length < 8) { fieldError('signup-password', 'signup-password-error'); valid = false; }
+    if (password !== confirm) { fieldError('signup-confirm', 'signup-confirm-error'); valid = false; }
+    if (!valid) return;
+
+    const btn = document.getElementById('signup-btn');
+    btn.disabled = true;
+    btn.textContent = 'Creating account…';
+
+    const { data, error } = await _supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { full_name: name, company, role: currentRole }
+      }
     });
-    ['email-error', 'password-error'].forEach(id => {
-      document.getElementById(id).classList.remove('visible');
-    });
-    const alert = document.getElementById('login-alert');
-    alert.classList.remove('visible');
+
+    if (error) {
+      btn.disabled = false;
+      btn.textContent = 'Create Account →';
+      showAlert(error.message);
+      return;
+    }
+
+    // If email confirmation is required, show success message
+    if (data.user && !data.session) {
+      btn.disabled = false;
+      btn.textContent = 'Create Account →';
+      showAlert('Account created! Check your email to confirm your address, then sign in.', 'success');
+      setTimeout(() => setMode('signin'), 4000);
+      return;
+    }
+
+    // Auto-confirmed — go straight to dashboard
+    redirectAfterAuth(data.user.id);
+  });
+
+  // ---- Forgot password ----
+  async function showForgotPassword(e) {
+    e.preventDefault();
+    const email = document.getElementById('signin-email').value.trim();
+    if (!isValidEmail(email)) {
+      fieldError('signin-email', 'signin-email-error');
+      showAlert('Enter your email address above first.');
+      return;
+    }
+    const { error } = await _supabase.auth.resetPasswordForEmail(email);
+    if (error) { showAlert(error.message); return; }
+    showAlert('Password reset email sent — check your inbox.', 'success');
   }
 
   // ---- SSO ----
   function handleSSO(provider) {
-    const btn = document.getElementById('submit-btn');
-    const alert = document.getElementById('login-alert');
-    document.getElementById('alert-message').textContent =
-      provider + ' SSO is not yet configured. Please use email sign-in.';
-    alert.classList.remove('alert-error', 'alert-success');
-    alert.classList.add('visible', 'alert-error');
+    showAlert(provider + ' SSO is not yet configured. Please use email sign-in.');
   }
 
-  // ---- Show mobile logo on small screens ----
+  // ---- Mobile logo ----
   if (window.innerWidth <= 768) {
     document.getElementById('mobile-logo').style.display = 'block';
   }
