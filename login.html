@@ -758,6 +758,7 @@
       email,
       password,
       options: {
+        emailRedirectTo: `${window.location.origin}/auth-callback.html`,
         data: { first_name: firstName, last_name: lastName, full_name: `${firstName} ${lastName}`, company, role: currentRole }
       }
     });
