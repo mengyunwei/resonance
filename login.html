@@ -549,11 +549,19 @@
       <!-- ======= SIGN UP FORM ======= -->
       <form id="signup-form" novalidate style="display:none;">
 
-        <div class="form-group">
-          <label class="form-label" for="signup-name">Full Name</label>
-          <input type="text" id="signup-name" class="form-input"
-            placeholder="Maya Chen" autocomplete="name" required />
-          <div class="form-error" id="signup-name-error">Please enter your full name.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="form-group">
+            <label class="form-label" for="signup-firstname">First Name</label>
+            <input type="text" id="signup-firstname" class="form-input"
+              placeholder="Maya" autocomplete="given-name" required />
+            <div class="form-error" id="signup-firstname-error">Required.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signup-lastname">Last Name</label>
+            <input type="text" id="signup-lastname" class="form-input"
+              placeholder="Chen" autocomplete="family-name" required />
+            <div class="form-error" id="signup-lastname-error">Required.</div>
+          </div>
         </div>
 
         <div class="form-group">
@@ -727,14 +735,16 @@
     e.preventDefault();
     clearErrors();
 
-    const name     = document.getElementById('signup-name').value.trim();
-    const company  = document.getElementById('signup-company').value.trim();
-    const email    = document.getElementById('signup-email').value.trim();
-    const password = document.getElementById('signup-password').value;
-    const confirm  = document.getElementById('signup-confirm').value;
+    const firstName = document.getElementById('signup-firstname').value.trim();
+    const lastName  = document.getElementById('signup-lastname').value.trim();
+    const company   = document.getElementById('signup-company').value.trim();
+    const email     = document.getElementById('signup-email').value.trim();
+    const password  = document.getElementById('signup-password').value;
+    const confirm   = document.getElementById('signup-confirm').value;
     let valid = true;
 
-    if (!name)               { fieldError('signup-name', 'signup-name-error'); valid = false; }
+    if (!firstName) { fieldError('signup-firstname', 'signup-firstname-error'); valid = false; }
+    if (!lastName)  { fieldError('signup-lastname',  'signup-lastname-error');  valid = false; }
     if (!isValidEmail(email)){ fieldError('signup-email', 'signup-email-error'); valid = false; }
     if (password.length < 8) { fieldError('signup-password', 'signup-password-error'); valid = false; }
     if (password !== confirm) { fieldError('signup-confirm', 'signup-confirm-error'); valid = false; }
@@ -748,7 +758,7 @@
       email,
       password,
       options: {
-        data: { full_name: name, company, role: currentRole }
+        data: { first_name: firstName, last_name: lastName, full_name: `${firstName} ${lastName}`, company, role: currentRole }
       }
     });
 
