@@ -5,7 +5,7 @@
    Supabase Dashboard > Settings > API
    ========================================= */
 
-const SUPABASE_URL  = 'YOUR_SUPABASE_URL';   // e.g. https://abcdefgh.supabase.co
-const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL  = 'https://oflaknarszsvlpceprrm.supabase.co';
+const SUPABASE_ANON = 'sb_publishable_RmZCZqzeZfJO1XbfN8o2Lw_-aoE6nWl';
 
 const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
